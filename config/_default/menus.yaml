@@ -19,18 +19,18 @@ main:
     weight: 30
 
   - name: Research
-    url: /research/          # 建议有对应的 content/research/_index.md
+    url: /research/ 
     weight: 40
     identifier: research     # 关键：供子菜单通过 parent 关联
 
   # 二级子项
   - name: Research
-    url: /research/          # 建议有对应的 content/research/_index.md      
+    url: /research/           
     parent: research
     weight: 10
 
   - name: Research Areas
-    url: /area/    # 建议有 content/research/areas/_index.md
+    url: /area/    
     parent: research
     weight: 20
 
@@ -43,10 +43,9 @@ main:
     url: /project/
     parent: research
     weight: 40
-  
 
   - name: Publications
-    url: /publication/       # 若用 publications 模块，这个就是列表页
+    url: /publication/       
     parent: research
     weight: 50
 
