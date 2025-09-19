@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+    <p class="text-xl text-gray-600 mb-6">{{ .Params.summary }}</p>
+    {{ if .Content }}
+      <div class="prose max-w-none">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </header>
+  
+  <!-- {{ if .Params.projects }}
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Related Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {{ $projects := where site.RegularPages "Section" "project" }}
+        {{ range .Params.projects }}
+          {{ $projectSlug := . }}
+          {{ range $projects }}
+            {{ if eq .File.BaseFileName $projectSlug }}
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                {{ with .Params.image }}
+                  <div class="h-48 bg-cover bg-center" style="background-image: url('{{ $.RelPermalink }}{{ .filename | default "featured.jpg" }}');"></div>
+                {{ end }}
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">
+                    <a href="{{ .RelPermalink }}" class="text-purple-600 hover:text-purple-800">{{ .Title }}</a>
+                  </h3>
+                  {{ with .Params.summary }}
+                    <p class="text-gray-600">{{ . }}</p>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }} -->
+   {{ if .Params.projects }}
+        <section class="mt-12">
+        <h2 class="text-2xl font-bold mb-6">Related Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{ range .Params.projects }}
+            {{/* 允许 sections 是 project 或 projects,兼容不同站点结构 */}}
+            {{ $p := site.GetPage (printf "project/%s" .) }}
+            {{ if not $p }}{{ $p = site.GetPage (printf "projects/%s" .) }}{{ end }}
+
+            {{ with $p }}
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                {{/* 优先从项目资源里找 featured/cover 图，其次用 .Params.image（若你有自定义） */}}
+                {{ $img := or (.Resources.GetMatch "**featured*") (.Resources.GetMatch "**cover*") }}
+                {{ if $img }}
+                    <div class="h-48 bg-cover bg-center" style="background-image:url('{{ $img.RelPermalink }}');"></div>
+                {{ else if .Params.image }}
+                    <div class="h-48 bg-cover bg-center" style="background-image:url('{{ .Params.image }}');"></div>
+                {{ end }}
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">
+                    <a href="{{ .RelPermalink }}" class="text-purple-600 hover:text-purple-800">{{ .Title }}</a>
+                    </h3>
+                    {{ with .Params.summary }}
+                    <p class="text-gray-600">{{ . }}</p>
+                    {{ end }}
+                </div>
+                </div>
+            {{ end }}
+            {{ end }}
+        </div>
+        </section>
+        {{ end }}
+</div>
+{{ end }}
+
+
+

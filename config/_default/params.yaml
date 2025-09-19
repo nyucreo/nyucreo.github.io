@@ -29,28 +29,53 @@ marketing:
     google: ''
     baidu: ''
 
+logo:
+  image: "logo.svg"
+  alt: "CREO"
+
 # Site header
 
 header:
   navbar:
     enable: true
     align: r
+    show_title: false
     show_logo: true
+    logo:
+      filename: "logo.svg"   # 只写文件名，不要写路径
+      text: ""
+      height: 100 
     show_language: false
     show_day_night: true
     show_search: true
     highlight_active_link: false
 
+
 # Site footer
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
-    license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
+    notice: '© {year} CREO Lab. All rights reserved.'
+  privacy_policy_url: '/privacy-policy/'
+  design_credit: 'Web Design by CREO Team'
+
+contact_links:
+  - icon: twitter
+    icon_pack: fab
+    name: Twitter
+    link: 'https://twitter.com/your_handle'
+  - icon: youtube
+    icon_pack: fab
+    name: YouTube
+    link: 'https://youtube.com/your_channel'
+  - icon: facebook-f
+    icon_pack: fab
+    name: Facebook
+    link: 'https://facebook.com/your_page'
+  - icon: instagram
+    icon_pack: fab
+    name: Instagram
+    link: 'https://instagram.com/your_handle'
 
 # Localization
 
@@ -116,3 +141,8 @@ extensions:
 publications:
   date_format: January 2006
   citation_style: apa
+
+assets:
+  css:
+    - "scss/lab.scss"   
+    - "scss/footer.scss"

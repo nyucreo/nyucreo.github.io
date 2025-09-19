@@ -1,0 +1,28 @@
+slides:
+  - title: "👋 Welcome to the group"
+    description: "Take a look at what we're working on..."
+    background_image: "/assets/media/welcome.jpg"
+    link: "#"
+    link_text: "Learn More"
+    weight: 1
+    
+  - title: "Lunch & Learn ☕️"
+    description: "Share your knowledge with the group and explore exciting new topics together!"
+    background_image: "/assets/media/lunch-learn.jpg"
+    link: "#"
+    link_text: "Join Us"
+    weight: 2
+    
+  - title: "World-Class Semiconductor Lab"
+    description: "Just opened last month! Come see our cutting-edge facilities."
+    background_image: "/assets/media/semiconductor-lab.jpg"
+    link: "./contact/"
+    link_text: "Visit Lab"
+    weight: 3
+
+# 配置部分（必需）
+config:
+  auto_play: true
+  interval: 5000
+  show_nav_arrows: true
+  show_indicators: true

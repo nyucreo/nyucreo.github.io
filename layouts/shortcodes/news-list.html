@@ -1,0 +1,16 @@
+{{ $count := .Get "count" | default 3 }}
+{{ range first $count (where .Site.RegularPages "Section" "news") }}
+  <div style="background: white; border: 1px solid #e8eaf6; border-left: 4px solid #520c8c; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(82, 12, 140, 0.1); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 4px 16px rgba(82, 12, 140, 0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(82, 12, 140, 0.1)'; this.style.transform='translateY(0)'">
+    <div style="color: #6c757d; font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 500;">{{ .Date.Format "January 2, 2006" }}</div>
+    <div style="font-weight: 600; margin-bottom: 0.5rem;">
+      <a href="{{ .RelPermalink }}" style="color: #2c3e50; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#520c8c'" onmouseout="this.style.color='#2c3e50'">{{ .Title }}</a>
+    </div>
+    {{ with .Summary }}
+      <div style="color: #5a6c7d; font-size: 0.95rem; line-height: 1.6;">{{ . | truncate 120 }}</div>
+    {{ end }}
+  </div>
+{{ end }}
+
+<div class="text-center mt-3">
+  <a href="/news/" style="color: #520c8c; font-weight: 600; text-decoration: none; padding: 0.75rem 1.5rem; border: 2px solid #520c8c; border-radius: 8px; transition: all 0.3s ease; background: transparent; display: inline-block;" onmouseover="this.style.background='#520c8c'; this.style.color='#ffffff'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(82, 12, 140, 0.3)'" onmouseout="this.style.background='transparent'; this.style.color='#520c8c'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">View More →</a>
+</div>

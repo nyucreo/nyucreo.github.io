@@ -1,0 +1,64 @@
+{{ $slides := .Site.Data.slider.slides }}
+{{ $config := .Site.Data.slider.config | default (dict "auto_play" true "interval" 5000 "show_nav_arrows" true "show_indicators" true) }}
+
+{{ with resources.Get "scss/slider.scss" }}
+  {{ $css := . | css.Sass }}
+  <style>{{ $css.Content | safeCSS }}</style>
+{{ end }}
+
+{{ if $slides }}
+<div class="news-slider" role="region" aria-label="Latest News Slider">
+  <div class="news-slider-container">
+    {{ range $slides }}
+    <div class="news-card" style="background-image: url('{{ .background_image }}')">
+      <div class="news-card-content">
+        <h2 class="news-card-title">{{ .title }}</h2>
+        <p class="news-card-description">{{ .description }}</p>
+        <a href="{{ .link }}" class="news-card-link">
+          {{ .link_text }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  
+  <!-- 导航箭头 -->
+  <button class="slider-nav prev" aria-label="Previous news">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z"/>
+    </svg>
+  </button>
+  <button class="slider-nav next" aria-label="Next news">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z"/>
+    </svg>
+  </button>
+  
+  <!-- 指示器 -->
+  <div class="slider-indicators">
+    {{ range $index, $slide := $slides }}
+    <button class="slider-indicator{{ if eq $index 0 }} active{{ end }}"></button>
+    {{ end }}
+  </div>
+</div>
+
+{{ with resources.Get "js/slider.js" }}
+  <script>{{ .Content | safeJS }}</script>
+{{ end }}
+
+<script>
+  window.newsSliderConfig = {
+    autoPlay: {{ $config.auto_play | default false }},
+    interval: {{ $config.interval | default 5000 }},
+    slideCount: {{ len $slides }}
+  };
+</script>
+
+{{ else }}
+<div class="slider-placeholder">
+  <p>No slides configured. Check data/slider.yaml</p>
+</div>
+{{ end }}

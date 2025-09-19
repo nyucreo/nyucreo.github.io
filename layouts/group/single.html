@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="container my-5 lab-two-col">
+  <div class="lab-logo">
+    {{ with .Resources.GetMatch "featured*" }}
+      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+    {{ else }}
+      {{ with .Params.image.filename }}
+        <img src="{{ . }}" alt="{{ $.Title }}">
+      {{ end }}
+    {{ end }}
+  </div>
+  <div class="lab-body">
+    <h1 class="lab-name">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+      <div class="text-muted mb-2">{{ . }}</div>
+    {{ end }}
+
+    {{ with .Params.links }}
+      {{ range . }}
+        {{ if eq .name "Website" }}
+          <p class="lab-website"><a href="{{ .url }}" target="_blank">Website</a></p>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ with .Params.summary }}
+      <p class="lab-summary">{{ . }}</p>
+    {{ end }}
+
+    <div class="lab-content">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

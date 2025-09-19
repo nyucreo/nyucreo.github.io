@@ -1,0 +1,105 @@
+<!-- layouts/partials/site_footer.html -->
+<!-- NYU CREO Laboratory Footer -->
+
+<!-- layouts/partials/site_footer.html -->
+<!-- layouts/partials/site_footer.html -->
+<!-- NYU CREO Laboratory Footer -->
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Logo和信息区域 -->
+      <div class="footer-logo">
+        <div class="logo-image">
+          {{- $logoURL := "" -}}
+          {{- with site.Params.logo.image -}}
+            {{- $try := resources.Get (printf "media/%s" .) -}}
+            {{- if $try -}}
+              {{- $logoURL = $try.RelPermalink -}}
+            {{- else -}}
+              {{- $logoURL = (printf "/media/%s" .) | relURL -}}
+            {{- end -}}
+          {{- end -}}
+          {{- with site.Params.header.navbar.logo.filename -}}
+            {{- $try := resources.Get (printf "media/%s" .) -}}
+            {{- if $try -}}
+              {{- $logoURL = $try.RelPermalink -}}
+            {{- else -}}
+              {{- $logoURL = (printf "/media/%s" .) | relURL -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if $logoURL -}}
+            <img src="{{ $logoURL }}" alt="{{ site.Params.header.navbar.logo.alt | default site.Title }}" class="footer-logo-img">
+          {{- else -}}
+            <div class="logo-placeholder">NYU<br>LOGO</div>
+          {{- end -}}
+        </div>
+        <div class="logo-text">
+          <!-- <div class="lab-name">{{ site.Title | default "CREO LABORATORY" }}</div> -->
+          <!-- <div class="lab-name">Center for Robotics and Embodied Intelligence</div> -->
+          <div class="lab-name">CREO</div>
+          
+          <!-- 地址信息直接放在logo文字下面 -->
+          <div class="address-info">
+            <div class="info-item">Tandon School of Engineering</div>
+            <div class="info-item">New York University</div>
+            <div class="info-item">370 Jay Street</div>
+            <div class="info-item">Brooklyn, NY 11201</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 社交媒体链接 - 横排显示 -->
+      <div class="social-links" aria-label="Social links">
+        {{- if site.Params.footer.social_links -}}
+          {{- range site.Params.footer.social_links -}}
+            <a href="{{ .url }}" class="social-link {{ .icon }}" aria-label="{{ .name }}" target="_blank" rel="noopener">
+              <i class="{{ .icon_pack | default "fab" }} fa-{{ .icon }}"></i>
+            </a>
+          {{- end -}}
+        {{- else if site.Params.contact_links -}}
+          {{- range site.Params.contact_links -}}
+            <a href="{{ .link }}" class="social-link {{ .icon }}" aria-label="{{ .name }}" target="_blank" rel="noopener">
+              <i class="{{ .icon_pack | default "fab" }} fa-{{ .icon }}"></i>
+            </a>
+          {{- end -}}
+        {{- else -}}
+          <a href="#" class="social-link twitter" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link youtube" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="#" class="social-link facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        {{- end -}}
+      </div>
+    </div>
+
+    <!-- 分隔线 -->
+    <!-- <hr class="footer-divider" /> -->
+
+    <!-- 底部版权信息 - 字体更小 -->
+    <div class="footer-bottom">
+      <div class="left">
+        © {{ now.Year }} CREO Lab. All rights reserved.
+        {{- if site.Params.footer.privacy_policy_url -}}
+          <a href="{{ site.Params.footer.privacy_policy_url }}" class="privacy-link">Privacy Policy</a>
+        {{- else -}}
+          <a href="#" class="privacy-link">Privacy Policy</a>
+        {{- end -}}
+      </div>
+      <div class="right">
+        {{- with site.Params.footer.design_credit -}}
+          {{ . | markdownify }}
+        {{- else -}}
+          Web Design by CREO Team
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+</footer>
