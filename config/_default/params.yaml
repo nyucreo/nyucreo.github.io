@@ -42,7 +42,6 @@ header:
     show_title: false
     show_logo: true
     logo:
-      filename: "logo.svg"   # 只写文件名，不要写路径
       text: ""
       height: 100 
     show_language: false
