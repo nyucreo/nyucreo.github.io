@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Wowchemy Research Group # Website name
+title: CREO # Website name
 baseURL: 'https://example.com/' # Website URL
 
 ############################
@@ -48,6 +48,23 @@ taxonomies:
   author: authors
 markup:
   _merge: deep
+  goldmark:
+    renderer:
+      unsafe: true  # This allows raw HTML in markdown
+    parser:
+      attribute: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    style: github
+    tabWidth: 4
 related:
   threshold: 80
   includeNewer: true
@@ -61,3 +78,4 @@ security:
   _merge: deep
 sitemap:
   _merge: deep
+

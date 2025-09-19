@@ -7,3 +7,19 @@
 .cta-group {
   justify-content: center;
 }
+
+/* Desktop: hover 展开 dropdown，点击父项照常跳转 */
+@media (min-width: 992px){
+  .navbar .dropdown:hover > .dropdown-menu{ display:block; }
+  .navbar .dropdown-toggle{ pointer-events:auto; } /* 允许点击链接 */
+}
+
+
+// Import event listing styles
+@import "event";
+@import "slider";
+@import "navbar";
+@import "lab";
+@import "group";
+@import "research-areas";
+@import "footer";

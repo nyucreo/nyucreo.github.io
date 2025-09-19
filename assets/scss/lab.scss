@@ -1,0 +1,60 @@
+/* 两列：左 320px 放 logo，右侧自适应放标题/网站/简介/正文 */
+.lab-two-col{
+  display:grid;
+  grid-template-columns:320px minmax(0,1fr);
+  gap:24px;
+  align-items:start;
+  margin-bottom: 1.25rem;
+}
+.lab-logo{
+  background:#f7f9fc;
+  border-radius:12px;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lab-logo img{ max-width:100%; max-height:260px; object-fit:contain; }
+
+.lab-body h1.lab-name{ 
+  margin:0 0 6px; 
+  font-size:clamp(28px,4vw,40px); 
+  line-height:1.15; 
+  color: #520c8c !important; 
+}
+
+.lab-body p.lab-website a{
+  display:inline-block; 
+  margin:4px 0 10px; 
+  font-weight:600;
+  color: #520c8c !important;
+  text-decoration:none; 
+  border-bottom:2px solid #520c8c; 
+  text-underline-offset:2px;
+}
+
+.lab-body p.lab-website a:hover{
+  color: #6d28d9 !important;
+  border-bottom-color: #6d28d9;
+}
+
+.lab-body p.lab-summary{ 
+  font-size:1.05rem; 
+  color:#4b5563; 
+  margin:0 0 10px; 
+}
+
+/* 让正文在右列内的排版好看些 */
+.lab-body h2, .lab-body h3{ 
+  margin-top:1.25rem; 
+  color: #520c8c !important;
+}
+
+.lab-body ul{ 
+  margin: .5rem 0 1rem 1.25rem; 
+}
+
+@media (max-width: 991.98px){
+  .lab-two-col{ grid-template-columns:1fr; }
+  .lab-logo img{ max-height:180px; }
+}
