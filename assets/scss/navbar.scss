@@ -85,7 +85,6 @@
   padding-top: .75rem;
   padding-bottom: .5rem;
   cursor: default;
-  pointer-events: none;          /* 不可点，纯标题 */
   background: transparent !important;
 }
 .navbar .dropdown-menu .dropdown-item:first-child::after{
