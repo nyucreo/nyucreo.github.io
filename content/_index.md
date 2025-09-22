@@ -23,6 +23,35 @@ sections:
         padding: ["0", "0", "0", "0"]
         margin: ["0", "0", "40px", "0"]
 
+  # - block: slider
+  #   content:
+  #     slides:
+  #       - title: "👋 Welcome to the group"
+  #         content: "Take a look at what we're working on..."
+  #         align: center
+  #         background:
+  #           image:
+  #             filename: coders.jpg
+  #             filters:
+  #               brightness: 0.7
+  #           position: right
+  #           color: '#666'
+  #       - title: "Lunch & Learn ☕️"
+  #         content: 'Share your knowledge with the group!'
+  #         align: left
+  #         background:
+  #           image:
+  #             filename: contact.jpg
+  #             filters:
+  #               brightness: 0.7
+  #           position: center
+  #           color: '#555'
+  #   design:
+  #     slide_height: ''
+  #     is_fullscreen: true
+  #     loop: false
+  #     interval: 2000
+
   - block: hero
     content:
       title: |
@@ -51,16 +80,42 @@ sections:
     design:
       columns: "1"
 
+  # - block: markdown
+  #   content:
+  #     title: "Research Areas"
+  #     subtitle: "Exploring the frontiers of robotics and AI"
+  #     text: |
+  #       {{< research-areas >}}
+  #   design:
+  #     columns: '1'
+  #     spacing:
+  #       padding: ['80px', '0', '80px', '0']
+
   - block: markdown
     content:
-      title: "Research Areas"
-      subtitle: "Exploring the frontiers of robotics and AI"
+      title: "Research Groups"
       text: |
-        {{< research-areas >}}
+        {{< group-list columns="3" count="20" sort_by="title" order="asc" >}}
     design:
-      columns: '1'
-      spacing:
-        padding: ['80px', '0', '80px', '0']
+      columns: "1"
+
+
+  - block: people
+    content:
+      title: Director
+      # subtitle: '<div style="text-align:center; margin-top:20px;">
+      #        <a href="/people/" style="color:#520c8c; font-weight:600; font-size: 24px; text-decoration:none;">
+      #          Meet the Team
+      #        </a>
+      #      </div>'
+      user_groups:
+          - Director
+      sort_by: Params.last_name
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: true
 
   - block: collection
     content:

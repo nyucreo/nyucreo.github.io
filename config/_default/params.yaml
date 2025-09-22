@@ -145,3 +145,8 @@ assets:
   css:
     - "scss/lab.scss"   
     - "scss/footer.scss"
+    - "scss/slider.scss"
+    - "scss/group.scss"
+
+  js:
+    - "js/slider.js"

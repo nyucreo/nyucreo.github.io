@@ -433,7 +433,7 @@
     margin-bottom: 2px;
   }
 
-  // 社交链接独立成行，居中显示
+  // 社交链接独立成行，靠左显示
   .social-links {
     flex-direction: row;
     justify-content: left;
@@ -502,7 +502,7 @@
   }
 
   .footer-logo {
-    gap: 12px;  // 稍微减少间距
+    gap: 3px;  // 稍微减少间距
   }
   
   // .logo-image {
@@ -511,8 +511,8 @@
   // }
 
   .logo-image {
-    width: 70px;  // 更小屏幕更小logo
-    height: 70px;
+    width: 80px;  // 更小屏幕更小logo
+    height: 80px;
   }
   
   .logo-text h2 {

@@ -1,161 +1,253 @@
-// /* 强制3列网格布局 - 针对实际HTML结构 */
+// /* ===============================
+//    Research Groups Cards 样式
+//    =============================== */
+
+// /* 大屏：固定 3 列 */
 // @media (min-width: 1024px) {
-//   /* 针对实际的row容器 */
-//   .row.justify-content-center {
+//   #research-groups .row.justify-content-center {
 //     display: grid !important;
 //     grid-template-columns: repeat(3, 1fr) !important;
 //     gap: 2rem !important;
-//     justify-content: stretch !important;
+//     // justify-content: stretch !important;
 //   }
-  
-//   /* 重置Bootstrap的col-12类 */
-//   .row.justify-content-center .col-12 {
+
+//   #research-groups .row.justify-content-center .col-12 {
 //     width: auto !important;
 //     max-width: none !important;
 //     flex: none !important;
 //   }
 // }
 
-// /* 中等屏幕2列 */
+// /* 中屏：2 列 */
 // @media (min-width: 768px) and (max-width: 1023px) {
-//   .row.justify-content-center {
+//   #research-groups .row.justify-content-center {
 //     display: grid !important;
 //     grid-template-columns: repeat(2, 1fr) !important;
 //     gap: 1.5rem !important;
 //   }
-  
-//   .row.justify-content-center .col-12 {
+
+//   #research-groups .row.justify-content-center .col-12 {
 //     width: auto !important;
 //     max-width: none !important;
 //     flex: none !important;
 //   }
 // }
 
-// /* 隐藏summary和其他不需要的元素 */
-// .card-simple .summary-link,
-// .card-simple .article-metadata,
-// .card-simple .btn-links {
+// /* 小屏：保持 1 列（默认） */
+
+// /* 隐藏 summary、日期、按钮等 */
+// #research-groups .card-simple .summary-link,
+// #research-groups .card-simple .article-metadata,
+// #research-groups .card-simple .btn-links {
 //   display: none !important;
 // }
 
-// /* 优化卡片样式 */
-// .card-simple {
+// /* 研究组卡片整体样式 */
+// #research-groups .card-simple {
 //   height: 100%;
 //   transition: transform 0.2s ease, box-shadow 0.2s ease;
 //   border: 1px solid #e5e7eb;
 //   border-radius: 12px;
 //   overflow: hidden;
 //   padding: 1.5rem;
-//   background: white;
+//   background: #fff;
 //   display: flex;
 //   flex-direction: column;
 //   align-items: center;
 //   text-align: center;
 // }
 
-// .card-simple:hover {
+// #research-groups .card-simple:hover {
 //   transform: translateY(-4px);
 //   box-shadow: 0 8px 25px rgba(82, 12, 140, 0.15);
 // }
 
-// /* 标题样式 */
-// .card-simple .section-subheading.article-title {
+// /* 标题 */
+// #research-groups .card-simple .section-subheading.article-title {
 //   color: #520c8c !important;
 //   font-weight: 600;
 //   margin-bottom: 0.5rem;
 //   font-size: 1.25rem;
 // }
 
-// /* 如果有副标题 */
-// .card-simple .article-subtitle {
+// /* 副标题 */
+// #research-groups .card-simple .article-subtitle {
 //   color: #6b7280;
 //   font-size: 0.875rem;
 //   margin-bottom: 0;
+// }
+
+// /* Logo 图片自适应卡片 */
+// #research-groups .card-simple img {
+//   max-width: 100%;
+//   max-height: 120px;
+//   object-fit: contain;
+//   margin-bottom: 0.75rem;
 // }
 
 /* ===============================
    Research Groups Cards 样式
    =============================== */
 
-/* 大屏：固定 3 列 */
-@media (min-width: 1024px) {
-  #research-groups .row.justify-content-center {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 2rem !important;
-    justify-content: stretch !important;
-  }
+/* 强制覆盖 Bootstrap 的列布局 */
+#research-groups .universal-wrapper {
+  max-width: 1200px !important;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-  #research-groups .row.justify-content-center .col-12 {
-    width: auto !important;
-    max-width: none !important;
-    flex: none !important;
+/* 重置 Bootstrap row 的默认行为 */
+#research-groups .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -15px !important;
+  margin-left: -15px !important;
+  justify-content: center !important;
+}
+
+/* 强制设置列的宽度 - 这是关键 */
+#research-groups .col-12 {
+  position: relative !important;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  margin-bottom: 30px !important;
+  
+  /* 移除 Bootstrap 的 100% 宽度 */
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  width: auto !important;
+}
+
+/* 大屏：3列 */
+@media (min-width: 992px) {
+  #research-groups .col-12 {
+    width: calc(33.333% - 30px) !important;
+    margin: 15px !important;
   }
 }
 
-/* 中屏：2 列 */
-@media (min-width: 768px) and (max-width: 1023px) {
-  #research-groups .row.justify-content-center {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem !important;
-  }
-
-  #research-groups .row.justify-content-center .col-12 {
-    width: auto !important;
-    max-width: none !important;
-    flex: none !important;
+/* 中屏：2列 */
+@media (min-width: 768px) and (max-width: 991px) {
+  #research-groups .col-12 {
+    width: calc(50% - 30px) !important;
+    margin: 15px !important;
   }
 }
 
-/* 小屏：保持 1 列（默认） */
+/* 小屏：1列 */
+@media (max-width: 767px) {
+  #research-groups .col-12 {
+    width: calc(100% - 30px) !important;
+    margin: 15px !important;
+  }
+}
 
-/* 隐藏 summary、日期、按钮等 */
+/* 隐藏不需要的元素 */
 #research-groups .card-simple .summary-link,
 #research-groups .card-simple .article-metadata,
-#research-groups .card-simple .btn-links {
+#research-groups .card-simple .btn-links,
+#research-groups .card .article-style {
   display: none !important;
 }
 
-/* 研究组卡片整体样式 */
+/* 卡片容器样式 */
+#research-groups .card,
 #research-groups .card-simple {
-  height: 100%;
+  height: 280px !important;
+  width: 100% !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
   overflow: hidden;
-  padding: 1.5rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  background: #fff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 1.5rem !important;
+  margin: 0 !important;
 }
 
+#research-groups .card:hover,
 #research-groups .card-simple:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(82, 12, 140, 0.15);
+  border-color: #520c8c !important;
 }
 
-/* 标题 */
-#research-groups .card-simple .section-subheading.article-title {
+/* 确保内部链接充满卡片 */
+#research-groups .card > a,
+#research-groups .card-simple > a {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  padding: 1rem !important;
+}
+
+/* 图片/Logo样式 */
+#research-groups .card img,
+#research-groups .card-simple img,
+#research-groups .article-banner img {
+  max-width: 140px !important;
+  max-height: 100px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto 1rem auto !important;
+  display: block !important;
+}
+
+/* 标题样式 */
+#research-groups .article-title,
+#research-groups .card-title,
+#research-groups h3.article-title,
+#research-groups .section-subheading {
   color: #520c8c !important;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+  margin: 0.5rem 0 !important;
+  text-align: center !important;
 }
 
-/* 副标题 */
-#research-groups .card-simple .article-subtitle {
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin-bottom: 0;
+/* 副标题样式 */
+#research-groups .article-subtitle,
+#research-groups .card-subtitle {
+  color: #6b7280 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.3 !important;
+  margin: 0.25rem 0 !important;
+  text-align: center !important;
 }
 
-/* Logo 图片自适应卡片 */
-#research-groups .card-simple img {
+/* 确保文字不会溢出 */
+#research-groups .card *,
+#research-groups .card-simple * {
   max-width: 100%;
-  max-height: 120px;
-  object-fit: contain;
-  margin-bottom: 0.75rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
+/* 修复可能的 float 问题 */
+#research-groups::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Debug - 可选：显示边框以查看布局 */
+/*
+#research-groups .col-12 {
+  border: 2px solid red !important;
+}
+#research-groups .card,
+#research-groups .card-simple {
+  border: 2px solid blue !important;
+}
+*/
