@@ -19,7 +19,8 @@
 .lab-body h1.lab-name{ 
   margin:0 0 6px; 
   font-size:clamp(28px,4vw,40px); 
-  line-height:1.15; 
+  line-height:1; 
+  font-weight: 600;
   color: #520c8c !important; 
 }
 
