@@ -72,7 +72,7 @@
 
 .footer .brand img {
   transform: scale(4);
-  transform-origin: center left; /* 或者 center center，看你希望从哪里放大 */
+  transform-origin: center left;
   height: auto;
   max-height: none;
 }
@@ -375,25 +375,47 @@
     padding: 0 20px;
   }
   
+  // .footer-content,
+  // .footer-top {
+  //   grid-template-columns: 1fr;
+  //   text-align: center;
+  //   gap: 15px;  // 进一步减少间距
+  // }
   .footer-content,
   .footer-top {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 15px;  // 进一步减少间距
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
   }
+
+  // .footer-logo {
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   gap: 10px;  // 减少间距
+  // }
 
   .footer-logo {
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;  // 减少间距
+    display: flex;
+    flex-direction: row;  // 保持横向布局
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
   }
 
+  // .logo-image {
+  //   width: 120px;  // 移动端更小
+  //   height: 120px;
+  // }
   .logo-image {
-    width: 120px;  // 移动端更小
-    height: 120px;
+    width: 80px;  // 移动端稍小
+    height: 80px;
+    flex-shrink: 0;  // 防止被压缩
   }
 
   .logo-text {
+    flex: 1;
     text-align: center;
     
     h2 {
@@ -402,20 +424,38 @@
   }
 
   .lab-name {
-    font-size: 1.5rem;
-    margin-bottom: 6px;  // 减少间距
+    font-size: 1.3rem;
+    margin-bottom: 6px; 
   }
 
   .logo-text .address-info .info-item {
-    font-size: 0.85rem;
-    margin-bottom: 2px;  // 减少间距
+    font-size: 0.75rem;
+    margin-bottom: 2px;
   }
+
+  // 社交链接独立成行，居中显示
+  .social-links {
+    flex-direction: row;
+    justify-content: left;
+    gap: 12px;
+    margin-top: 5px;
+    width: 100%;
+    order: 2;  // 确保在底部
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
 
   .footer-bottom {
     flex-direction: column;
-    gap: 4px;  // 减少间距
+    gap: 4px;
     text-align: center;
     font-size: 0.7rem;
+    order: 3;
     
     .left, .right {
       font-size: 0.7rem;
@@ -427,21 +467,22 @@
     }
   }
   
-  .social-links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 10px;  // 减少上边距
-  }
+  // .social-links {
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   gap: 12px;
+  //   margin-top: 10px;  // 减少上边距
+  // }
   
-  .social-link {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
+  // .social-link {
+  //   width: 36px;
+  //   height: 36px;
+  //   font-size: 1rem;
+  // }
   
   .footer-divider {
     margin: 8px 0;  // 移动端更小间距
+    order: 2.5;
   }
 }
 
@@ -459,10 +500,19 @@
   .footer-top {
     gap: 12px;
   }
+
+  .footer-logo {
+    gap: 12px;  // 稍微减少间距
+  }
   
+  // .logo-image {
+  //   width: 100px;  // 小屏幕更小
+  //   height: 100px;
+  // }
+
   .logo-image {
-    width: 100px;  // 小屏幕更小
-    height: 100px;
+    width: 70px;  // 更小屏幕更小logo
+    height: 70px;
   }
   
   .logo-text h2 {
@@ -470,12 +520,12 @@
   }
   
   .lab-name {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
   }
   
   .logo-text .address-info .info-item {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-bottom: 1px;
   }
   
