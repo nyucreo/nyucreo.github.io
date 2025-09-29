@@ -1,32 +1,22 @@
-// assets/scss/footer.scss
-// NYU CREO Laboratory Footer - 优化版本
-
-/* ===================================
-   主Footer样式
-   =================================== */
-
 .nyu-footer,
 .site-footer {
-  // 渐变背景
   background: linear-gradient(135deg, #520c8c 0%, #7b1fa2 100%);
   color: white;
-  padding: 20px 0 10px 0;  // 进一步减少padding
-  margin-top: 15px;  // 减少顶部间距
+  padding: 20px 0 10px 0; 
+  margin-top: 15px;  
   position: relative;
   
-  // 全屏宽度确保
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   
-  // 顶部装饰线
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;  // 减少装饰线高度
+    height: 2px; 
     background: linear-gradient(90deg, 
       transparent 0%, 
       rgba(232, 234, 246, 0.4) 25%, 
@@ -38,13 +28,13 @@
 }
 
 /* ===================================
-   容器和布局
+   container
    =================================== */
 
 .footer-container {
-  max-width: 100%;  // 改为100%，不再限制最大宽度
-  margin: 0;  // 移除居中
-  padding: 0 30px;  // 左右留30px间距
+  max-width: 100%;
+  margin: 0;  
+  padding: 0 30px; 
   position: relative;
   z-index: 2;
 }
@@ -52,15 +42,15 @@
 .footer-content,
 .footer-top {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   gap: 40px;
   align-items: center;
-  margin-bottom: 20px;  // 减少底部间距
+  margin-bottom: 20px;
   width: 100%;
 }
 
 /* ===================================
-   Logo区域
+   Logo
    =================================== */
 
 .footer-logo {
@@ -78,10 +68,10 @@
 }
 
 .logo-image {
-  width: 160px;  // 稍微缩小logo以节省垂直空间
+  width: 160px;  
   height: 160px;
   background: rgba(255, 255, 255, 0.98);
-  border-radius: 12px;  // 稍微减小圆角
+  border-radius: 12px;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +84,7 @@
   flex-shrink: 0;
   
   &:hover {
-    transform: scale(1.02) translateY(-1px);  // 减少动画幅度
+    transform: scale(1.02) translateY(-1px); 
     box-shadow: 
       0 8px 28px rgba(0, 0, 0, 0.22),
       0 3px 12px rgba(0, 0, 0, 0.12),
@@ -104,11 +94,11 @@
 }
 
 .footer-logo-img {
-  width: 95%;  // 增大图片在容器中的占比
+  width: 95%; 
   height: 95%;
   object-fit: contain;
   border-radius: 8px;
-  filter: contrast(1.1) saturate(1.05);  // 增强对比度和饱和度，让图片更清晰
+  filter: contrast(1.1) saturate(1.05); 
 }
 
 .logo-placeholder {
@@ -121,7 +111,7 @@
 }
 
 /* ===================================
-   文字内容
+   Text
    =================================== */
 
 .logo-text {
@@ -141,11 +131,11 @@
 }
 
 .lab-name {
-  font-size: 1.5rem;  // 稍微减小标题以节省空间
+  font-size: 1.2rem; 
   font-weight: 800;
-  margin-bottom: 0px;  // 减少间距
+  margin-bottom: 0px; 
   color: #ffffff;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.2px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
@@ -159,131 +149,32 @@
 }
 
 /* ===================================
-   联系信息（融合到logo-text中）
+   contact info
    =================================== */
 
 .footer-info {
-  // 隐藏原来的独立信息区域，信息将显示在logo-text中
   display: none;
 }
 
-// 在logo-text中添加地址信息
 .logo-text .address-info {
   margin-top: 8px;
   
   .info-item {
-    font-size: 0.7rem;  // 增大地址文字
+    font-size: 0.7rem; 
     margin-bottom: 4px;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
-    font-weight: 400;  // 稍微增加字重
+    font-weight: 400;  
   }
 }
 
 /* ===================================
-   社交媒体链接 - 移到右上角
-   =================================== */
-
-.social-links {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  align-items: flex-start;  // 改为顶部对齐
-  justify-content: flex-end;
-  justify-self: flex-end;
-  align-self: flex-start;  // 确保在顶部
-}
-
-.social-link {
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.12);  // 稍微提高透明度
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.95);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);  // 稍微增强边框
-  position: relative;
-  overflow: hidden;
-  
-  // 悬停光效
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(255, 255, 255, 0.25), 
-      transparent);
-    transition: left 0.4s ease;
-  }
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px) scale(1.05);
-    color: white;
-    text-decoration: none;
-    box-shadow: 
-      0 6px 16px rgba(0, 0, 0, 0.25),
-      0 2px 8px rgba(0, 0, 0, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
-    
-    &::before {
-      left: 100%;
-    }
-  }
-  
-  // 特定平台颜色
-  &.twitter:hover { 
-    background: rgba(29, 161, 242, 0.4); 
-    border-color: rgba(29, 161, 242, 0.7);
-    box-shadow: 
-      0 6px 16px rgba(29, 161, 242, 0.3),
-      0 2px 8px rgba(29, 161, 242, 0.2);
-  }
-  
-  &.youtube:hover { 
-    background: rgba(255, 0, 0, 0.4); 
-    border-color: rgba(255, 0, 0, 0.7);
-    box-shadow: 
-      0 6px 16px rgba(255, 0, 0, 0.3),
-      0 2px 8px rgba(255, 0, 0, 0.2);
-  }
-  
-  &.facebook:hover { 
-    background: rgba(24, 119, 242, 0.4); 
-    border-color: rgba(24, 119, 242, 0.7);
-    box-shadow: 
-      0 6px 16px rgba(24, 119, 242, 0.3),
-      0 2px 8px rgba(24, 119, 242, 0.2);
-  }
-  
-  &.instagram:hover { 
-    background: linear-gradient(45deg, 
-      rgba(225, 48, 108, 0.4), 
-      rgba(255, 204, 0, 0.4)); 
-    border-color: rgba(225, 48, 108, 0.7);
-    box-shadow: 
-      0 6px 16px rgba(225, 48, 108, 0.3),
-      0 2px 8px rgba(225, 48, 108, 0.2);
-  }
-}
-
-/* ===================================
-   底部版权信息 - 更小的字体
+   copyright
    =================================== */
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 10px;  // 进一步减少顶部padding
+  padding-top: 10px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -298,8 +189,8 @@
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
-    margin-left: 10px;  // 减少间距
-    padding: 1px 3px;  // 减少padding
+    margin-left: 10px;  
+    padding: 1px 3px;  
     border-radius: 3px;
     border-bottom: 1px solid transparent;
     font-size: 0.75rem;
@@ -313,13 +204,13 @@
   }
   
   .privacy-link {
-    margin-left: 6px;  // 减少间距
+    margin-left: 6px;  
     font-size: 0.7rem;
   }
 }
 
 .footer-divider {
-  margin: 10px 0;  // 进一步减少上下间距
+  margin: 10px 0; 
   height: 1px;
   border: 0;
   background: linear-gradient(90deg, 
@@ -331,43 +222,31 @@
 }
 
 /* ===================================
-   响应式设计
+   Responsive design
    =================================== */
 
 @media (max-width: 1024px) {
   .footer-content,
   .footer-top {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     gap: 30px;
-    align-items: flex-start;  // 保持顶部对齐
-    
-    .social-links {
-      flex-direction: row;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-    
-    .social-link {
-      width: 32px;
-      height: 32px;
-      font-size: 0.9rem;
-    }
+    align-items: flex-start;
   }
   
   .logo-image {
-    width: 160px;  // 在中等屏幕上适当缩小
+    width: 160px;
     height: 160px;
   }
   
   .lab-name {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
   .nyu-footer,
   .site-footer {
-    padding: 15px 0 8px 0;  // 移动端更矮
+    padding: 15px 0 8px 0;
     margin-top: 10px;
   }
   
@@ -375,12 +254,6 @@
     padding: 0 20px;
   }
   
-  // .footer-content,
-  // .footer-top {
-  //   grid-template-columns: 1fr;
-  //   text-align: center;
-  //   gap: 15px;  // 进一步减少间距
-  // }
   .footer-content,
   .footer-top {
     display: flex;
@@ -389,29 +262,19 @@
     text-align: left;
   }
 
-  // .footer-logo {
-  //   justify-content: center;
-  //   flex-direction: column;
-  //   gap: 10px;  // 减少间距
-  // }
-
   .footer-logo {
     display: flex;
-    flex-direction: row;  // 保持横向布局
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 15px;
     width: 100%;
   }
 
-  // .logo-image {
-  //   width: 120px;  // 移动端更小
-  //   height: 120px;
-  // }
   .logo-image {
-    width: 80px;  // 移动端稍小
+    width: 80px;
     height: 80px;
-    flex-shrink: 0;  // 防止被压缩
+    flex-shrink: 0; 
   }
 
   .logo-text {
@@ -424,7 +287,7 @@
   }
 
   .lab-name {
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     margin-bottom: 6px; 
   }
 
@@ -432,23 +295,6 @@
     font-size: 0.75rem;
     margin-bottom: 2px;
   }
-
-  // 社交链接独立成行，靠左显示
-  .social-links {
-    flex-direction: row;
-    justify-content: left;
-    gap: 12px;
-    margin-top: 5px;
-    width: 100%;
-    order: 2;  // 确保在底部
-  }
-  
-  .social-link {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-
 
   .footer-bottom {
     flex-direction: column;
@@ -467,21 +313,8 @@
     }
   }
   
-  // .social-links {
-  //   flex-direction: row;
-  //   justify-content: center;
-  //   gap: 12px;
-  //   margin-top: 10px;  // 减少上边距
-  // }
-  
-  // .social-link {
-  //   width: 36px;
-  //   height: 36px;
-  //   font-size: 1rem;
-  // }
-  
   .footer-divider {
-    margin: 8px 0;  // 移动端更小间距
+    margin: 8px 0;
     order: 2.5;
   }
 }
@@ -489,7 +322,7 @@
 @media (max-width: 480px) {
   .nyu-footer,
   .site-footer {
-    padding: 12px 0 6px 0;  // 小屏幕最矮
+    padding: 12px 0 6px 0;
   }
   
   .footer-container {
@@ -502,16 +335,11 @@
   }
 
   .footer-logo {
-    gap: 3px;  // 稍微减少间距
+    gap: 3px;
   }
-  
-  // .logo-image {
-  //   width: 100px;  // 小屏幕更小
-  //   height: 100px;
-  // }
 
   .logo-image {
-    width: 80px;  // 更小屏幕更小logo
+    width: 80px; 
     height: 80px;
   }
   
@@ -520,24 +348,13 @@
   }
   
   .lab-name {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     margin-bottom: 4px;
   }
   
   .logo-text .address-info .info-item {
     font-size: 0.7rem;
     margin-bottom: 1px;
-  }
-  
-  .social-link {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
-  }
-  
-  .social-links {
-    gap: 10px;
-    margin-top: 8px;
   }
   
   .footer-bottom {
@@ -553,12 +370,12 @@
   }
   
   .footer-divider {
-    margin: 6px 0;  // 小屏幕最小间距
+    margin: 6px 0; 
   }
 }
 
 /* ===================================
-   动画和交互效果
+   interactive effects
    =================================== */
 
 @keyframes footerFadeIn {
@@ -578,15 +395,13 @@
 }
 
 /* ===================================
-   Hugo Blox主题兼容性
+   Hugo Blox Theme Compatibility
    =================================== */
 
-// 隐藏默认footer
 .powered-by {
   display: none !important;
 }
 
-// 确保footer wrapper没有额外样式
 .footer-wrapper,
 .footer-section {
   margin: 0 !important;
@@ -599,7 +414,6 @@
   }
 }
 
-// 页面布局确保
 html, body {
   height: 100%;
 }

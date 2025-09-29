@@ -18,49 +18,6 @@ main:
   - name: People
     url: /people/
     weight: 40
-  #   identifier: people
-
-  # # 二级子项
-  # - name: Faculty
-  #   url: /faculty/           
-  #   parent: people
-  #   weight: 10
-
-  # - name: Student
-  #   url: /student/    
-  #   parent: people
-  #   weight: 20
-
-  # - name: Research
-  #   url: /research/ 
-  #   weight: 50
-  #   identifier: research 
-
-  # # 二级子项
-  # - name: Research
-  #   url: /research/           
-  #   parent: research
-  #   weight: 10
-
-  # - name: Research Areas
-  #   url: /area/    
-  #   parent: research
-  #   weight: 20
-
-  # - name: Research Groups
-  #   url: /group/
-  #   parent: research
-  #   weight: 30
-
-  # - name: Projects
-  #   url: /project/
-  #   parent: research
-  #   weight: 40
-
-  # - name: Publications
-  #   url: /publication/       
-  #   parent: research
-  #   weight: 50
 
   - name: Research Groups
     url: /group/
