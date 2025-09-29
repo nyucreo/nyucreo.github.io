@@ -19,10 +19,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z"/>
           </svg>
-          <!-- <a href="{{ .link }}" class="news-card-link">
-            {{ .link_text | default "Learn More" }}
-            <span class="arrow">→</span>
-          </a> -->
         </a>
       </div>
     </div>
@@ -30,21 +26,13 @@
   </div>
   
   {{ if gt (len $slides) 1 }}
-  <!-- 导航箭头 -->
   <button class="slider-nav prev" aria-label="Previous news">
-    <!-- <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z"/>
-    </svg> -->
     <span class="nav-icon"><</span>
   </button>
   <button class="slider-nav next" aria-label="Next news">
-    <!-- <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z"/>
-    </svg> -->
     <span class="nav-icon">></span>
   </button>
   
-  <!-- 指示器 -->
   <div class="slider-indicators">
     {{ range $index, $slide := $slides }}
     <button class="slider-indicator{{ if eq $index 0 }} active{{ end }}"></button>

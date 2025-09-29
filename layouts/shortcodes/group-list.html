@@ -4,7 +4,6 @@
        columns=3, count=0(=all), sort_by="title", order="asc", img_height="110px", gap="1.5rem", section="group"
 */}}
 
-{{/* ---------- 参数读取 ---------- */}}
 {{ $cols      := or (.Get "columns") "3" }}
 {{ $count     := .Get "count" }}
 {{ $sortBy    := or (.Get "sort_by") "title" }}
@@ -13,10 +12,8 @@
 {{ $gap       := or (.Get "gap") "1.5rem" }}
 {{ $section   := or (.Get "section") "group" }}
 
-{{/* ---------- 获取 group 页面集合 ---------- */}}
 {{ $pages := where site.RegularPages "Section" $section }}
 
-{{/* 排序：支持按 title 或 Params 的 key，例如 sort_by="Params.weight" */}}
 {{ if eq (lower $sortBy) "title" }}
   {{ $pages = $pages.ByTitle }}
 {{ else if hasPrefix $sortBy "Params." }}
@@ -28,23 +25,19 @@
   {{ $pages = $pages.Reverse }}
 {{ end }}
 
-{{/* 限制数量（可选） */}}
 {{ if $count }}
   {{ $pages = first (int $count) $pages }}
 {{ end }}
 
 <div id="research-groups-grid">
-  <!-- Grid 容器：一行 N 列 -->
   <div class="research-groups-container"
        style="display:grid;grid-template-columns:repeat({{ $cols }},minmax(0,1fr));gap:{{ $gap }};align-items:start;">
 
     {{ range $pages }}
       <div class="research-group-card">
-        <!-- 卡片主体链接块级化 -->
         <a href="{{ .RelPermalink }}" class="card-link"
            style="display:block;text-align:center;padding:12px;border:1px solid rgba(0,0,0,.08);border-radius:12px;">
 
-          {{/* Logo/Featured Image 优先匹配资源 featured* */}}
           {{ $resource := .Resources.GetMatch "featured*" }}
           {{ if $resource }}
             <div class="card-image">
@@ -54,7 +47,6 @@
             </div>
 
           {{ else if .Params.image }}
-            {{/* 兼容 image 为字符串或 {filename:..} */}}
             {{ $src := "" }}
             {{ $pi := .Params.image }}
             {{ $t := printf "%T" $pi }}
@@ -71,7 +63,6 @@
             {{ end }}
           {{ end }}
 
-          <!-- 只显示标题 -->
           <div class="card-content" style="margin-top:.5rem;">
             <h3 class="card-title" style="font-size:1.05rem;margin:0;">{{ .Title }}</h3>
           </div>

@@ -2,7 +2,6 @@
    Navbar & Logo Overrides
    =========================== */
 :root{
-  /* 按需改这几个数值就行 */
   --logo-height-desktop: 100px;
   --logo-height-mobile:  80px;
 
@@ -14,7 +13,6 @@
   --dropdown-sep-color:    #9bbbd5;
 }
 
-/* 解除主题对品牌区的高度上限，避免被 60px 卡住 */
 .navbar-brand,
 .navbar-brand-mobile-wrapper,
 .navbar-brand-desktop-wrapper{
@@ -27,18 +25,12 @@
   align-items: center !important;
 }
 
-/* Navbar 容器：让内容垂直居中并给足高度 */
 .navbar{
   min-height: var(--navbar-min-h-desktop) !important;
   padding-top: 8px !important;
   padding-bottom: 8px !important;
 }
-// .navbar .navbar-brand img {
-//   transform: scale(8);   /* 放大 200% */
-//   transform-origin: center left; /* 从左边中心点放大，避免跑偏 */
-//   height: auto;          /* 确保不被固定高度限制 */
-//   max-height: none;      /* 解除上限 */
-// }
+
 .navbar > .container-xl{
   min-height: var(--navbar-min-h-desktop) !important;
   align-items: center !important;
@@ -47,7 +39,7 @@
   justify-content: flex-start !important;
 }
 
-/* 真正控制 LOGO 尺寸（兼容 <img>/<picture>/<svg>） */
+
 .navbar .navbar-brand img,
 .navbar .navbar-brand picture img,
 .navbar .navbar-brand svg,
@@ -58,12 +50,9 @@
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
-  // transform: scale(8);
-  // transform-origin: left center;
 }
 
 
-/* 如果 logo 是背景图（极少数主题会这样），也放开限制 */
 .navbar .navbar-brand{
   background-size: contain;
   background-repeat: no-repeat;
@@ -77,35 +66,6 @@
   min-width: var(--dropdown-min-width);
 }
 
-/* 把第一个 dropdown-item 当作分组标题来展示 */
-.navbar .dropdown-menu .dropdown-item:first-child{
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--dropdown-header-color) !important;
-  padding-top: .75rem;
-  padding-bottom: .5rem;
-  cursor: default;
-  background: transparent !important;
-}
-.navbar .dropdown-menu .dropdown-item:first-child::after{
-  content: "";
-  display: block;
-  margin-top: .5rem;
-  height: 2px;
-  width: 100%;
-  background: var(--dropdown-sep-color);
-  opacity: .85;
-}
-
-/* 普通项行距舒展一点 */
-.navbar .dropdown-menu .dropdown-item:nth-child(n+2){
-  padding-top: .6rem;
-  padding-bottom: .6rem;
-}
-
-/* ===============
-   响应式（≤991px）
-   =============== */
 @media (max-width: 991.98px){
   .navbar{
     min-height: var(--navbar-min-h-mobile) !important;

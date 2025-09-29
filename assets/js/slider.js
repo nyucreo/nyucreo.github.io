@@ -34,7 +34,6 @@ class NewsSlider {
   
   bindEvents() {
 
-    // 按钮点击事件
     if (this.prevBtn) {
       this.prevBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -51,7 +50,6 @@ class NewsSlider {
       });
     }
 
-    // 指示器点击事件
     this.indicators.forEach((indicator, index) => {
       indicator.addEventListener('click', (e) => {
         e.preventDefault();
@@ -59,7 +57,6 @@ class NewsSlider {
         this.goToSlide(index);
       });
 
-      // 移动端触摸事件
       indicator.addEventListener('touchend', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -68,23 +65,17 @@ class NewsSlider {
 
     });
     
-    // 触摸事件
     this.container.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
     this.container.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
     this.container.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
     
-    // 鼠标事件（桌面端拖拽）
     this.container.addEventListener('mousedown', this.handleMouseDown.bind(this));
-    // this.container.addEventListener('mousemove', this.handleMouseMove.bind(this));
-    // this.container.addEventListener('mouseup', this.handleMouseUp.bind(this));
     this.container.addEventListener('mouseleave', this.handleMouseUp.bind(this));
     document.addEventListener('mousemove', this.handleMouseMove.bind(this));
     document.addEventListener('mouseup', this.handleMouseUp.bind(this));
     
-    // 键盘导航
     document.addEventListener('keydown', this.handleKeyDown.bind(this));
     
-    // 鼠标悬停时暂停自动播放
     this.container.addEventListener('mouseenter', () => {
       this.stopAutoPlay();
     });
@@ -92,7 +83,6 @@ class NewsSlider {
       this.startAutoPlay();
     });
 
-    // 页面可见性控制
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         this.stopAutoPlay();
@@ -101,7 +91,6 @@ class NewsSlider {
       }
     });
     
-    // 窗口大小改变时重新计算
     window.addEventListener('resize', this.handleResize.bind(this));
 
   }
@@ -138,31 +127,26 @@ class NewsSlider {
 
     this.isTransitioning = true;
     
-    // 更新轮播容器位置
     const translateX = -this.currentIndex * 100;
     if (this.sliderContainer) {
       this.sliderContainer.style.transform = `translateX(${translateX}%)`;
     } 
 
-    // 更新指示器
     this.indicators.forEach((indicator, index) => {
       const isActive = index === this.currentIndex;
       indicator.classList.toggle('active', isActive);
     });
-    
-    // 更新卡片状态
+
     this.cards.forEach((card, index) => {
       const isHidden = index !== this.currentIndex;
       card.setAttribute('aria-hidden', isHidden);
     });
     
-    // 转换完成后重置状态
     setTimeout(() => {
       this.isTransitioning = false;
     }, 500);
   }
   
-  // 触摸事件处理
   handleTouchStart(e) {
     this.startX = e.touches[0].clientX;
     this.currentX = this.startX;
@@ -208,7 +192,6 @@ class NewsSlider {
     console.log('Touch end');
   }
   
-  // 鼠标事件处理（桌面端）
   handleMouseDown(e) {
     if (e.target.closest('.slider-nav') || e.target.closest('.slider-indicator')) return;
     
@@ -255,7 +238,6 @@ class NewsSlider {
     this.startAutoPlay();
   }
   
-  // 键盘导航
   handleKeyDown(e) {
     if (!this.container.matches(':hover')) return;
     
@@ -275,7 +257,6 @@ class NewsSlider {
     }
   }
   
-  // 自动播放控制
   startAutoPlay() {
     this.stopAutoPlay();
     
@@ -303,21 +284,16 @@ class NewsSlider {
     }
   }
   
-  // 窗口大小改变处理
   handleResize() {
     this.updateSlider();
   }
   
-  // 销毁实例
   destroy() {
     this.stopAutoPlay();
-    // 这里可以添加更多清理代码
   }
 }
 
-// 简化的初始化函数
 function initSliders() {
-  // 等待一下确保DOM完全加载
   const sliders = document.querySelectorAll('.news-slider');
   console.log(`Found ${sliders.length} slider(s)`);
   
@@ -333,7 +309,6 @@ function initSliders() {
       try {
         const newsSlider = new NewsSlider(slider);
         
-        // 存储实例以便调试
         slider.sliderInstance = newsSlider;
       } catch (error) {
         console.error(`Error initializing slider ${index + 1}:`, error);
@@ -345,18 +320,14 @@ function initSliders() {
   
 }
 
-// 多种初始化方式确保加载
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initSliders);
 } else {
-  // DOM已经加载完成
   initSliders();
 }
 
-// 备用初始化
 setTimeout(initSliders, 1000);
 
-// 全局调试函数
 window.debugSlider = function() {
   const sliders = document.querySelectorAll('.news-slider');
   console.log('=== Slider Debug Info ===');
@@ -365,7 +336,6 @@ window.debugSlider = function() {
   });
 };
 
-// 手动控制函数（用于测试）
 window.manualSliderNext = function() {
   const slider = document.querySelector('.news-slider');
   if (slider && slider.sliderInstance) {
@@ -380,7 +350,6 @@ window.manualSliderPrev = function() {
   }
 };
 
-// 导出类供其他地方使用
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = NewsSlider;
 }
