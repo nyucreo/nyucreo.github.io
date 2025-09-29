@@ -5,20 +5,28 @@
       <div class="footer-logo">
         <div class="logo-image">
           {{- $logoURL := "" -}}
-          {{- with site.Params.logo.image -}}
-            {{- $try := resources.Get (printf "media/%s" .) -}}
-            {{- if $try -}}
-              {{- $logoURL = $try.RelPermalink -}}
-            {{- else -}}
-              {{- $logoURL = (printf "/media/%s" .) | relURL -}}
+          {{- $circleLogoPath := "icon.svg" -}}
+          {{- $circleLogo := resources.Get (printf "media/%s" $circleLogoPath) -}}
+          {{- if $circleLogo -}}
+            {{- $logoURL = $circleLogo.RelPermalink -}}
+          {{- else -}}
+            {{- with site.Params.logo.image -}}
+              {{- $try := resources.Get (printf "media/%s" .) -}}
+              {{- if $try -}}
+                {{- $logoURL = $try.RelPermalink -}}
+              {{- else -}}
+                {{- $logoURL = (printf "/media/%s" .) | relURL -}}
+              {{- end -}}
             {{- end -}}
-          {{- end -}}
-          {{- with site.Params.header.navbar.logo.filename -}}
-            {{- $try := resources.Get (printf "media/%s" .) -}}
-            {{- if $try -}}
-              {{- $logoURL = $try.RelPermalink -}}
-            {{- else -}}
-              {{- $logoURL = (printf "/media/%s" .) | relURL -}}
+            {{- if not $logoURL -}}
+              {{- with site.Params.header.navbar.logo.filename -}}
+                {{- $try := resources.Get (printf "media/%s" .) -}}
+                {{- if $try -}}
+                  {{- $logoURL = $try.RelPermalink -}}
+                {{- else -}}
+                  {{- $logoURL = (printf "/media/%s" .) | relURL -}}
+                {{- end -}}
+              {{- end -}}
             {{- end -}}
           {{- end -}}
           {{- if $logoURL -}}
