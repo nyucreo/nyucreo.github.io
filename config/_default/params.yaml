@@ -58,26 +58,8 @@ footer:
   privacy_policy_url: '/privacy-policy/'
   design_credit: 'Web Design by CREO Team'
 
-contact_links:
-  - icon: twitter
-    icon_pack: fab
-    name: Twitter
-    link: 'https://twitter.com/your_handle'
-  - icon: youtube
-    icon_pack: fab
-    name: YouTube
-    link: 'https://youtube.com/your_channel'
-  - icon: facebook-f
-    icon_pack: fab
-    name: Facebook
-    link: 'https://facebook.com/your_page'
-  - icon: instagram
-    icon_pack: fab
-    name: Instagram
-    link: 'https://instagram.com/your_handle'
 
 # Localization
-
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'

@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - '**'
-      - '!main'        # 排除 master
+      - '!main'
   pull_request:
     branches:
       - main

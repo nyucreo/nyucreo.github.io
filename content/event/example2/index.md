@@ -12,8 +12,8 @@ address:
   postcode: "94305"
   country: "United States"
 
-date: "2025-10-01T15:00:00-04:00"   # 开始时间
-end: "2025-10-01T16:00:00-04:00"    # 结束时间（可选）
+date: "2025-10-01T15:00:00-04:00"   # start time
+end: "2025-10-01T16:00:00-04:00"    # end time (optional)
 all_day: false
 
 # Schedule page publish date (NOT talk date).

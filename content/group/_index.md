@@ -22,26 +22,4 @@ sections:
       spacing:
         padding: ['60px', '0', '60px', '0']
 
-  # - block: collection
-  #   content:
-  #     title: ""
-  #     count: 20
-  #     filters:
-  #       folders: ["group"]
-  #     sort_by: title
-  #     order: asc
-  #   design:
-  #     # view: card
-  #     # columns: 3
-  #     view: community/threecol 
-  #     show_subtitle: false
-  #     show_summary: false
-  #     show_date: false
-  #     show_tags: false
-  #     show_authors: false
-  #     card:
-  #       style: overlay
-  #       text_align: left
-  #       show_subtitle: false
-  #   id: research-groups
 ---

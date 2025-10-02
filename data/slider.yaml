@@ -20,7 +20,7 @@ slides:
     link_text: "Visit Lab"
     weight: 3
 
-# 配置部分（必需）
+# config
 config:
   auto_play: true
   interval: 5000
