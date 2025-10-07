@@ -80,16 +80,6 @@ sections:
     design:
       columns: "1"
 
-  # - block: markdown
-  #   content:
-  #     title: "Research Areas"
-  #     subtitle: "Exploring the frontiers of robotics and AI"
-  #     text: |
-  #       {{< research-areas >}}
-  #   design:
-  #     columns: '1'
-  #     spacing:
-  #       padding: ['80px', '0', '80px', '0']
 
   - block: markdown
     content:
@@ -103,11 +93,6 @@ sections:
   - block: people
     content:
       title: Director
-      # subtitle: '<div style="text-align:center; margin-top:20px;">
-      #        <a href="/people/" style="color:#520c8c; font-weight:600; font-size: 24px; text-decoration:none;">
-      #          Meet the Team
-      #        </a>
-      #      </div>'
       user_groups:
           - Director
       sort_by: Params.last_name
