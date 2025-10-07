@@ -2,139 +2,98 @@
    Research Groups Cards
    =============================== */
 
-#research-groups .universal-wrapper {
+#research-groups .universal-wrapper,
+.research-groups-container {
   max-width: 1200px !important;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-#research-groups .row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  margin-right: -15px !important;
-  margin-left: -15px !important;
-  justify-content: center !important;
-}
-
-#research-groups .col-12 {
-  position: relative !important;
-  padding-right: 15px !important;
-  padding-left: 15px !important;
-  margin-bottom: 30px !important;
-  
-  flex: 0 0 auto !important;
-  max-width: none !important;
-  width: auto !important;
+.research-groups-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 1.5rem !important;
+  align-items: start !important;
 }
 
 @media (min-width: 992px) {
-  #research-groups .col-12 {
-    width: calc(33.333% - 30px) !important;
-    margin: 15px !important;
+  .research-groups-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #research-groups .col-12 {
-    width: calc(50% - 30px) !important;
-    margin: 15px !important;
+  .research-groups-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
 @media (max-width: 767px) {
-  #research-groups .col-12 {
-    width: calc(100% - 30px) !important;
-    margin: 15px !important;
+  .research-groups-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
-#research-groups .card-simple .summary-link,
-#research-groups .card-simple .article-metadata,
-#research-groups .card-simple .btn-links,
-#research-groups .card .article-style {
-  display: none !important;
-}
-
-#research-groups .card,
-#research-groups .card-simple {
+.research-group-card {
+  width: 295px !important;
   height: 280px !important;
-  width: 100% !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid #e5e7eb !important;
   border-radius: 12px !important;
   overflow: hidden;
   background: #fff !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding: 1.5rem !important;
-  margin: 0 !important;
 }
 
-#research-groups .card:hover,
-#research-groups .card-simple:hover {
+.research-group-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(82, 12, 140, 0.15);
   border-color: #520c8c !important;
 }
 
-#research-groups .card > a,
-#research-groups .card-simple > a {
+.card-link {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   width: 100% !important;
   height: 100% !important;
   text-decoration: none !important;
   color: inherit !important;
-  padding: 1rem !important;
+  padding: 0.5rem !important;
 }
 
-#research-groups .card img,
-#research-groups .card-simple img,
-#research-groups .article-banner img {
-  max-width: 140px !important;
-  max-height: 100px !important;
+.card-image {
+  flex: 1 0 auto !important; 
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.card-image img {
+  max-width: 200px !important;
+  max-height: 160px !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
-  margin: 0 auto 1rem auto !important;
   display: block !important;
 }
 
-#research-groups .article-title,
-#research-groups .card-title,
-#research-groups h3.article-title,
-#research-groups .section-subheading {
-  color: #520c8c !important;
-  font-weight: 600 !important;
-  font-size: 1.25rem !important;
+.card-content {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.card-title {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
   line-height: 1.4 !important;
-  margin: 0.5rem 0 !important;
+  margin: 0 !important;
   text-align: center !important;
-}
-
-#research-groups .article-subtitle,
-#research-groups .card-subtitle {
-  color: #6b7280 !important;
-  font-size: 0.9rem !important;
-  line-height: 1.3 !important;
-  margin: 0.25rem 0 !important;
-  text-align: center !important;
-}
-
-#research-groups .card *,
-#research-groups .card-simple * {
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-#research-groups::after {
-  content: "";
-  display: table;
-  clear: both;
+  min-height: 3.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
 }
