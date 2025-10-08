@@ -14,6 +14,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
   gap: 1.5rem !important;
   align-items: start !important;
+  justify-content: center !important;
 }
 
 @media (min-width: 992px) {
@@ -30,7 +31,8 @@
 
 @media (max-width: 767px) {
   .research-groups-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(300px, auto) !important;
+    justify-content: center !important;
   }
 }
 
