@@ -12,51 +12,46 @@
   </div>
 
   {{/* Research Groups Grid */}}
-  <div id="research-groups-grid">
-    <!-- Add inline Grid to container, 3 columns per row -->
-    <div class="research-groups-container"
-         style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;align-items:start;"> 
+  <div class="research-groups-grid">
+    {{ range .Pages }}
+      <div class="research-group-card">
+        <a href="{{ .RelPermalink }}" class="card-link"
+            style="display:block;text-align:center;padding:12px;border:1px solid rgba(0,0,0,.08);border-radius:12px;"> 
 
-      {{ range .Pages }}
-        <div class="research-group-card">
-          <a href="{{ .RelPermalink }}" class="card-link"
-             style="display:block;text-align:center;padding:12px;border:1px solid rgba(0,0,0,.08);border-radius:12px;"> 
-
-            {{/* Logo/Featured Image */}}
-            {{ $resource := .Resources.GetMatch "featured*" }}
-            {{ if $resource }}
-              <div class="card-image">
-                {{ $image := $resource.Resize "300x" }}
-                <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" loading="lazy"
-                     style="height:110px;object-fit:contain;display:block;margin:0 auto;"> 
-              </div>
-
-            {{ else if .Params.image }}      
-              {{ $src := "" }}                                                
-              {{ $pi := .Params.image }}                                       
-              {{ $t := printf "%T" $pi }}                                  
-              {{ if eq $t "string" }}                                        
-                {{ $src = $pi }}                                               
-              {{ else if (and (isset $pi "filename") (ne (index $pi "filename") "")) }} 
-                {{ $src = (printf "media/%s" (index $pi "filename")) }}     
-              {{ end }}                                                       
-              {{ if ne $src "" }}                                                  
-                <div class="card-image">                                           
-                  <img src="{{ $src | relURL }}" alt="{{ .Title }}" loading="lazy"
-                       style="height:110px;object-fit:contain;display:block;margin:0 auto;">
-                </div>                                                            
-              {{ end }}                                                            
-            {{ end }}
-            
-            {{/* Card Content: Only show title */}}
-            <div class="card-content" style="margin-top:.5rem;"> 
-              <h3 class="card-title" style="font-size:1.05rem;margin:0;">{{ .Title }}</h3>
-              {{/* Subtitle/summary hidden; restore if needed */}}
+          {{/* Logo/Featured Image */}}
+          {{ $resource := .Resources.GetMatch "featured*" }}
+          {{ if $resource }}
+            <div class="card-image">
+              {{ $image := $resource.Resize "300x" }}
+              <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" loading="lazy"
+                    style="height:110px;object-fit:contain;display:block;margin:0 auto;"> 
             </div>
-          </a>
-        </div>
-      {{ end }}
-    </div>
+
+          {{ else if .Params.image }}      
+            {{ $src := "" }}                                                
+            {{ $pi := .Params.image }}                                       
+            {{ $t := printf "%T" $pi }}                                  
+            {{ if eq $t "string" }}                                        
+              {{ $src = $pi }}                                               
+            {{ else if (and (isset $pi "filename") (ne (index $pi "filename") "")) }} 
+              {{ $src = (printf "media/%s" (index $pi "filename")) }}     
+            {{ end }}                                                       
+            {{ if ne $src "" }}                                                  
+              <div class="card-image">                                           
+                <img src="{{ $src | relURL }}" alt="{{ .Title }}" loading="lazy"
+                      style="height:110px;object-fit:contain;display:block;margin:0 auto;">
+              </div>                                                            
+            {{ end }}                                                            
+          {{ end }}
+          
+          {{/* Card Content: Only show title */}}
+          <div class="card-content" style="margin-top:.5rem;"> 
+            <h3 class="card-title" style="font-size:1.05rem;margin:0;">{{ .Title }}</h3>
+            {{/* Subtitle/summary hidden; restore if needed */}}
+          </div>
+        </a>
+      </div>
+    {{ end }}
   </div>
 </div>
 
