@@ -46,7 +46,7 @@ social:
 highlight_name: false
 
 user_groups:
-  - Director
+  - Directors
 ---
 
 Chen Feng is an Associate Professor at NYU. He is interested in active and collaborative robot perception and learning through multidisciplinary use-inspired research that originates from construction, manufacturing, and transportation domains. Before NYU, Chen was a research scientist in the computer vision group at Mitsubishi Electric Research Labs (MERL) in Cambridge, MA, focusing on localization, mapping, and deep learning for self-driving cars and robotics, and invented several patented algorithms. Chen holds a bachelor’s degree in geospatial engineering from Wuhan University in China, a master’s degree in electrical engineering, and a Ph.D. in civil engineering, both from the University of Michigan at Ann Arbor. Chen publishes in and reviews for prestigious AI and Robotics venues like CVPR/ICCV/ICRA/IROS, and he also serves as an associate editor for IEEE Robotics and Automation Letters (RA-L). Chen is a recipient of the NSF CAREER Award in 2023. More information on his research can be found at https://ai4ce.github.io/.

@@ -63,9 +63,9 @@ sections:
 
   - block: people
     content:
-      title: Director
+      title: Directors
       user_groups:
-          - Director
+          - Directors
       sort_by: Params.last_name
       sort_ascending: true
     design:

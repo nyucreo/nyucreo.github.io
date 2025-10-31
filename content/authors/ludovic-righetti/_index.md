@@ -50,7 +50,7 @@ social:
 highlight_name: false
 
 user_groups:
-  - Director
+  - Directors
 ---
 
 Ludovic Righetti is jointly appointed in the Electrical and Computer Engineering Department and in the Mechanical and Aerospace Engineering Department at the Tandon School of Engineering of New York University. He is also holder of an International Chair at the Artificial and Natural Intelligence Toulouse Institute. He co-created and co-directs the Center for Robotics and Embodied Intelligence. He is also a member of the Center for Responsible AI, Center for Urban Science and Progress and Center for Advanced Technology in Telecommunications.

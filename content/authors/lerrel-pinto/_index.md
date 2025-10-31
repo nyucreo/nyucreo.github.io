@@ -42,7 +42,7 @@ social:
 highlight_name: false
 
 user_groups:
-  - Director
+  - Directors
 ---
 
 Lerrel Pinto is an Assistant Professor of Computer Science at NYU. His research is aimed at getting robots to generalize and adapt in the messy world we live in. To this end his lab focuses broadly on robot learning and decision making, with an emphasis on large-scale learning (both data and models), representation learning for sensory data, developing algorithms to model actions and behavior, reinforcement learning for adapting to new scenarios, and building open-sourced affordable robots. This work has received best paper awards at ICRA 2016, RSS 2023, and ICRA 2024 and finalist at IROS 2019, and CoRL 2022. Lerrel has received the Sloan Fellowship, Packard Fellowship, TR35 innovator under 35, RAS Early Career and NSF CAREER awards. Several of his works have been featured in popular media such as The Wall Street Journal, TechCrunch, MIT Tech Review, Wired, and BuzzFeed among others. His recent work can be found on www.lerrelpinto.com.
