@@ -20,7 +20,7 @@ interests:
   - Reinforcement Learning
   - Multi-agent Learning
   - Autonomous Vehicles
-  - Traffic Control
+  - Multi-agent Robotics
 # education
 # Social/Academic Networking
 social:
@@ -36,6 +36,9 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/eugenevinitsky/
+  - icon: twitter
+    icon_pack: fab
+    link: https://bsky.app/profile/eugenevinitsky.bsky.social
   
 
 # Highlight the author in author lists? (true/false)
@@ -45,10 +48,10 @@ user_groups:
   - Core Faculty
 ---
 
-I'm an incoming Assistant Professor at NYU Tandon in 2023 based in Civil Engineering with a PhD in control from UC Berkeley with Alexandre Bayen. My research goal is to see complex, human-like behavior emerge from unsupervised interaction between groups of learning agents with an applications focus on robotics and transportation. Concretely this leads to a lot of questions I'm currently interested in:
+I'm an Assistant Professor at NYU Tandon based in Civil Engineering and an affiliation with Computer Science. I received my PhD in control and reinforcement learning from UC Berkeley with Alexandre Bayen during which I spent time at Apple, Tesla, Deepmind, and Facebook AI Research. My research goal is to see complex, human-like behavior emerge from unsupervised interaction between groups of learning agents with an applications focus on robotics and transportation. Concretely this leads to a lot of questions I'm currently interested in:
 
-How can we use RL to design models of human agents? How can we ensure that RL designed agents are human-compatible?
-How can we synthesize environments that push and test the capabilities of our agents?
-What algorithmic advances and software tools are needed to address these questions?
-In practice this means working on understanding how to push the state of the art in multi-agent RL algorithms, designing new data-driven simulators, and trying to deploy simulator-designed controllers into real-world systems. For a sample of the type of work that I do / have done, check out the research section below.
-I've spent time at Apple, Tesla, Deepmind, Facebook AI Research, and am a recipient of an NSF fellowship.
+- How can we use RL to design models of human agents? How can we ensure that RL designed agents are human-compatible?
+- How can we synthesize environments that push and test the capabilities of our agents?
+- What algorithmic advances and software tools are why we haven't solved all this already?
+
+In practice this means working on understanding how to push the state of the art in multi-agent RL algorithms, designing new data-driven simulators, and trying to deploy simulator-designed controllers into real-world systems. 

@@ -26,6 +26,11 @@
       {{ with .Params.location }}
         <div style="color: #95a5a6; font-size: 0.875rem;">📍 {{ . }}</div>
       {{ end }}
+      {{ if .Params.event_url }}
+        <div style="margin-top: 0.5rem;">
+          <a href="{{ .Params.event_url }}" target="_blank" style="display: inline-block; padding: 6px 12px; background-color: #520c8c; color: white; text-decoration: none; border-radius: 4px; font-size: 0.875rem; font-weight: 600; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6d1ab3'" onmouseout="this.style.backgroundColor='#520c8c'">📅 Register</a>
+        </div>
+      {{ end }}
     </div>
   </div>
 {{ end }}
