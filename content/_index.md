@@ -26,13 +26,12 @@ sections:
   - block: hero
     content:
       title: |
-        Wowchemy
-        Research Group
+        NYU Center for Robotics and Embodied Intelligence (CREO)
       image:
         filename: welcome.jpg
       text: |
         <br>
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+        We strive to advance research, education, and innovation at the intersection of robotics and AI to enhance everyone's quality of life through socially beneficial technologies.
 
   - block: markdown
     content:
@@ -73,17 +72,5 @@ sections:
       show_role: true
       show_social: true
 
-  - block: collection
-    content:
-      title: "Latest Preprints"
-      text: ""
-      count: 5
-      filters:
-        folders:
-          - publication
-        publication_type: "article"
-    design:
-      view: citation
-      columns: "1"
 ---
 
