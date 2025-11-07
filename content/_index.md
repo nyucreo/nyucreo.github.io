@@ -43,7 +43,7 @@ sections:
             {{< news-list count="3" >}}
           </div>
           <div class="col-md-6">
-            <h2 style="color:#2c3e50;border-bottom:3px solid #520c8c;padding-bottom:.5rem;margin-bottom:1.5rem;font-size: 2rem;">Upcoming Events</h2>
+            <h2 style="color:#2c3e50;border-bottom:3px solid #520c8c;padding-bottom:.5rem;margin-bottom:1.5rem;font-size: 2rem;">Events</h2>
             {{< event-list count="4" >}}
           </div>
         </div>

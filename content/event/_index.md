@@ -73,8 +73,15 @@ sections:
 
         @media (max-width: 600px) {
           #event-buttons {
-            flex-direction: column;
-            gap: 10px;
+            flex-wrap: nowrap;
+            gap: 8px; 
+          }
+
+          #event-buttons button {
+            flex: 1;
+            min-width: 0;
+            font-size: 0.95rem;
+            padding: 10px 12px;
           }
         }
 
