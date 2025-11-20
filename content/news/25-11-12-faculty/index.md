@@ -1,6 +1,7 @@
 ---
 title: "Faculty Fellow in Robotics / Embodied AI — Applications Open"
-date: 2025-01-15T00:00:00Z
+date: 2025-11-12T00:00:00Z
+publishDate: 2025-11-12T00:00:00Z
 summary: "NYU CREO is recruiting a full-time, non-tenure-track Faculty Fellow in Robotics and Embodied AI. Applications are now open."
 featured: false
 
