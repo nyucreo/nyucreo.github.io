@@ -5,7 +5,7 @@
       <div class="footer-logo">
         <div class="logo-image">
           {{- $logoURL := "" -}}
-          {{- $circleLogoPath := "icon.svg" -}}
+          {{- $circleLogoPath := "logo.svg" -}}
           {{- $circleLogo := resources.Get (printf "media/%s" $circleLogoPath) -}}
           {{- if $circleLogo -}}
             {{- $logoURL = $circleLogo.RelPermalink -}}
