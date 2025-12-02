@@ -2,8 +2,10 @@
    Navbar & Logo Overrides
    =========================== */
 :root{
-  --logo-height-desktop: 100px;
-  --logo-height-mobile:  80px;
+  --logo-height-desktop: 90px;
+  --logo-height-mobile:  60px;
+
+  --logo-max-width-mobile: 65vw;
 
   --navbar-min-h-desktop: 140px;
   --navbar-min-h-mobile:  110px;
@@ -46,7 +48,7 @@
 .navbar-brand-mobile-wrapper .navbar-brand img,
 .navbar-brand-desktop-wrapper .navbar-brand img{
   height: var(--logo-height-desktop) !important;
-  max-height: 90px !important;
+  max-height: none !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
@@ -80,6 +82,7 @@
   .navbar-brand-mobile-wrapper .navbar-brand img,
   .navbar-brand-desktop-wrapper .navbar-brand img{
     height: var(--logo-height-mobile) !important;
+    max-width: var(--logo-max-width-mobile) !important;
   }
 }
 
