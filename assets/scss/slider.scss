@@ -32,9 +32,9 @@
   justify-content: center;
   padding: 60px;
   box-sizing: border-box;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 
   image-rendering: optimizeQuality;
   image-rendering: -webkit-optimize-contrast;
@@ -44,6 +44,7 @@
   img {
     -webkit-user-drag: none;
     user-drag: none;
+
   }
 }
 
@@ -278,7 +279,7 @@
 
 @media (max-width: 768px) {
   .news-slider {
-    height: 400px;
+    height: 350px;
     margin: 20px 0;
     cursor: default;
   }
@@ -330,7 +331,7 @@
 
 @media (max-width: 480px) {
   .news-slider {
-    height: 350px;
+    height: 300px;
   }
   
   .news-card {
